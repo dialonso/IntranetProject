@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/pfe/sources/img/head.jpg" type="image/x-icon" >
+
+    <title>
+      
+      {%block title%}{%endblock%}
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/pfe/sources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/pfe/sources/css/bootstrap-theme.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/pfe/sources/img/head.jpg" type="image/x-icon" >
+    <!-- Custom styles for this template -->
+     <script src="/pfe/sources/js/jquery.min.js"></script>
+    <script src="/pfe/sources/js/bootstrap.min.js"></script>
+    {%block script %}
+
+    {%endblock%}
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      
+      <!-- Nav bar -->
+      <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      
+      <a class="navbar-brand" href="#">ESTEM INTRANET</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ><a href="/pfe/controller/admin/accueil.php">Accueil</a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer étudiant <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/pfe/controller/admin/ajouter-etudiant.php">Ajouter</a></li>
+            <li><a href="/pfe/controller/admin/lister-etudiant.php">Lister</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer M. Administration <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Ajouter</a></li>
+            <li><a href="#">Lister</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer Professeur <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Ajouter</a></li>
+            <li><a href="#">Lister</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer tâches administratives <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><label>Publier</label></li>
+            
+            <li><a href="#">Relevé de notes </a></li>
+            <li><a href="#">Relevé d'absences</a></li>
+            <li><a href="#">Relevé de retards</a></li>
+            <li class="divider"></li>
+            <li><a href="/pfe/controller/admin/creer-planning.php">planning</a></li>
+            <li><a href="#">Supports numeriques</a></li>
+            <li class="divider"></li>
+            
+          </ul>
+        </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          {% block connected%}
+
+          {%endblock%}
+           <span class="caret"></span></a>
+          
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Consulter</a></li>
+            <li><a href="#">Modifier</a></li>
+            <li class="divider"></li>
+            <li><a href="/pfe/controller/logout.php">Deconnexion</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+      <!-- Jumbotron -->
+      {%block jumbotron%}
+
+        <div class="jumbotron">
+      
+        <h1>
+          {%block titre%}
+
+      {%endblock%}
+        </h1>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Mon compte</a></p>
+      </div>
+
+      {%endblock%}
+      
+
+      <!-- Example row of columns -->
+     
+      {%block main %}
+
+
+         <div class="row">
+          
+      </div>
+
+
+      {%endblock%}
+
+      <!-- Site footer -->
+      <div class="footer">
+        <p style="text-align:center;">&copy; M. Alonso 2014</p>
+      </div>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

@@ -1,0 +1,115 @@
+{%extends "admin/layout.html.twig" %}
+
+{%block title%}
+	{{title}}
+{%endblock%}
+
+{%block jumbotron%}{%endblock%}
+ {%block script %}
+<script type="text/javascript" src="/pfe/sources/js/addStudent.js"></script>
+    {%endblock%}
+ {% block connected%}
+ <img src="/pfe/sources/img/profil/{{user.compte.image}}" width="18">
+{{user.perso.prenom}} {{user.perso.nom}}
+ {%endblock%}
+
+ {%block main %}
+{%if message %}
+	<div class="alert alert-info">{{message}}</div>
+{%endif%}
+ <div class="panel panel-primary">
+
+ <div class="panel-heading">
+    <h3 class="panel-title">Ajouter un etudiant</h3>
+  </div>
+   <form role="form" method="post" action="/pfe/controller/admin/ajouter-etudiant.php">
+  <div class="panel-body">
+    <div class="form-group col-md-4">
+						<label>Nom de l'étudiant :</label>
+						<input type="text" class="form-control" placeholder="Nom de l'étudiant" name="nom" required="required">
+					</div>
+					<div class="form-group col-md-4">
+						<label>Prenom de l'étudiant :</label>
+						<input type="text" class="form-control" placeholder="Prenom de l'étudiant" name="prenom" required="required">
+					</div>	
+					<div class="form-group col-md-4">
+						<label>Matricule de l'étudiant :</label>
+
+						<input type="text" class="form-control" placeholder="Matricule de l'étudiant" name="matricule" required="required">
+					</div>
+					<div class="form-group col-md-4">
+						<label>Email de l'étudiant :</label>
+						<input type="text" class="form-control" placeholder="mail de l'étudiant" name="mail">
+					</div>
+					<div class="form-group col-md-4">
+						<label>GSM de l'étudiant :</label>
+						<input type="text" class="form-control" placeholder="GSM de l'étudiant" name="gsm">
+					</div>
+					<div class="form-group col-md-4">
+						<label>Date de naissance de l'étudiant :</label>
+						<input type="date" class="form-control" placeholder="date de naissance de l'étudiant" name="datenaissance">
+					</div>
+					
+					<div class="select-div" >
+					<div class="form-group col-md-3">
+						<select id="select-filiere" class="form-control">
+							<option value="vide">Filière</option>
+							{%for filiere in filieres%}
+									<option value="{{filiere.id}}">
+									{{filiere.nom}}
+									</option>
+							{%endfor%}
+							
+						</select>
+						</div>
+						<div class="form-group col-md-3">
+						<select id="select-niveau" class="form-control" disabled="disabled">
+							<option value="vide">Niveau</option>
+							<option value="1">Niveau 1</option>
+						</select>
+						</div>
+						<div class="form-group col-md-3">
+						<select id="select-classe" class="form-control" disabled="disabled">
+							<option value="vide">Classe</option>
+							<option value="1">Classe 1</option>
+						</select>
+						</div>
+						<div class="form-group col-md-3">
+						<select id="select-groupe" class="form-control" disabled="disabled" name="groupe" required="required">
+							<option value="vide">Groupe</option>
+							<option value="10">Groupe 10</option>
+						</select>
+						</div>
+
+					</div>
+					<br>
+					<!-- possibilité d'ajouter le parent de l'etudiant -->
+					<div>
+						
+						<legend>
+							informations du tuteur
+						</legend>
+						<div class="form-group col-md-6">
+						<input type="text" placeholder="Nom du tuteur" class="form-control" name="nomPere" required="required">
+						</div>
+						<div class="form-group col-md-6">
+						<input type="text" placeholder="Prenom du tuteur" class="form-control" name="prenomPere" required="required">
+						
+						</div>
+					</div>
+  </div>
+  <div class="panel-footer">
+  	<input type="submit" class=" btn btn-primary" value="valider">
+	<input type="reset" class="btn" value="annuler">
+  </div>
+  </form>
+</div>
+
+
+					
+					
+					
+					
+
+				
+ {%endblock%}

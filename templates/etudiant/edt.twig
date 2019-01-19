@@ -1,0 +1,69 @@
+{%extends "etudiant/layout.html.twig" %}
+{%block title%}
+	{{title}}
+{%endblock%}
+
+{%block jumbotron%}{%endblock%}
+
+ {% block connected%}
+ <img src="/pfe/sources/img/profil/{{user.compte.image}}" width="18">
+{{user.perso.prenom}} {{user.perso.nom}}
+          {%endblock%}
+
+{%block style %}
+<style type="text/css">
+      .bloc a img:hover{
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      }
+</style>
+    {%endblock%}
+
+{%block main %}
+<div class="panel panel-danger">
+	<div class="panel-heading">
+    <h3 class="panel-title">{{plan.nom}}</h3>
+  </div>
+<div class="panel-body">
+    
+<table class="table table-bordered table-condensed table-striped">
+	<thead>
+		<tr>
+			<td></td>
+			{% for h in heures%}
+				<td>{{h}}</td>
+			{%endfor%}
+		</tr>
+	</thead>
+	<tbody>
+		{%for j in jours %}
+
+			<tr>
+				<td>{{j}}</td>
+
+				{%for he in heures %}
+
+
+					<td>
+						{%for c in contenus%}
+
+							{%if c.jour == j and c.horaire == he %}
+								<p>{{c.matiere}}</p>
+								<p>{{c.professeur}}</p>
+								<p>{{c.salle}}</p>
+							{%endif%}
+
+						{%endfor%}
+					</td>
+
+				{%endfor %}
+
+			</tr>
+
+		{%endfor%}
+	</tbody>
+
+</table>
+
+  </div>
+</div>
+{%endblock%}

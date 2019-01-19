@@ -1,0 +1,57 @@
+{%extends "etudiant/layout.html.twig" %}
+{%block title%}
+	{{title}}
+{%endblock%}
+
+{%block titre%}
+Bonjour {{user.perso.prenom}} {{user.perso.nom}}
+
+ {%endblock%}
+
+ {% block connected%}
+ <img src="/pfe/sources/img/profil/{{user.compte.image}}" width="18">
+{{user.perso.prenom}} {{user.perso.nom}}
+          {%endblock%}
+
+{%block style %}
+<style type="text/css">
+      .bloc a img:hover{
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      }
+</style>
+    {%endblock%}
+
+       {%block menuAccueil%}
+
+       	<div class="bloc">
+       		<a class="btn btn-lg" title="Accueil" href="#">
+       			<img class="thumbnail" src="/pfe/sources/img/icons/accueil.jpg">
+       		</a>
+       		<a class="btn btn-lg" title="Mon compte" href="#">
+       			<img class="thumbnail" src="/pfe/sources/img/icons/compte.jpg">
+       		</a>
+       		<a class="btn btn-lg" title="Mon planning" href="/pfe/controller/etudiant/emploi-de-temps.php">
+       			<img class="thumbnail" src="/pfe/sources/img/icons/planning.jpg">
+       		</a>
+       		<a class="btn btn-lg" title="Mon relevé de notes" href="#">
+       			<img class="thumbnail" src="/pfe/sources/img/icons/Rnotes.jpg">
+       		</a>
+       		<br>
+       		<a class="btn btn-lg" title="Mon relevé d'absence" href="#">
+       			<img class="thumbnail" src="/pfe/sources/img/icons/Rabsences.jpg">
+       		</a>
+       		<a class="btn btn-lg" title="Mes supports numeriques" href="#">
+       			<img class="thumbnail" src="/pfe/sources/img/icons/Snumerique.jpg">
+       		</a><!-- 
+       		<a class="btn btn-lg" title="" href="#">
+       			<img class="thumbnail" src="/pfe/sources/img/icons/users.jpg">
+       		</a> -->
+       		<a class="btn btn-lg" title="Mes tâches" href="#">
+       			<img class="thumbnail" src="/pfe/sources/img/icons/taches.jpg">
+       		</a>
+       		<a class="btn btn-lg" title="Mon relecé de retards" href="#">
+       			<img class="thumbnail" src="/pfe/sources/img/icons/Rretards.jpg">
+       		</a>
+
+       	</div>
+      {%endblock%}

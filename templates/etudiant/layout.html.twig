@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/pfe/sources/img/head.jpg" type="image/x-icon" >
+
+    <title>
+      
+      {%block title%}{%endblock%}
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/pfe/sources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/pfe/sources/css/bootstrap-theme.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/pfe/sources/img/head.jpg" type="image/x-icon" >
+  {%block style %}
+
+    {%endblock%}
+    <!-- Custom styles for this template -->
+     <script src="/pfe/sources/js/jquery.min.js"></script>
+    <script src="/pfe/sources/js/bootstrap.min.js"></script>
+    {%block script %}
+
+    {%endblock%}
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      
+      <!-- Nav bar -->
+      <nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      
+      <a class="navbar-brand" href="#">ESTEM INTRANET</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ><a href="/pfe/controller/etudiant/accueil.php">Accueil</a></li>
+        <li><a href="/pfe/controller/etudiant/emploi-de-temps.php">Mon planning</a></li>
+        <li><a href="#">Mes notes</a></li>
+        <li><a href="#">Mes absences</a></li>
+        <li><a href="#">Mes retards</a></li>
+        <li><a href="#">Mon paiement</a></li>
+        <li><a href="#">Mes supports</a></li>
+        <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer étudiant <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Ajouter</a></li>
+            <li><a href="#">Lister</a></li>
+          </ul>
+        </li> -->
+        <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer les tâches administratives <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><label>Publier</label></li>
+            
+            <li><a href="#">Relevé de notes </a></li>
+            <li><a href="#">Relevé d'absences</a></li>
+            <li><a href="#">Relevé de retards</a></li>
+            <li class="divider"></li>
+            <li><a href="#">planning</a></li>
+            <li><a href="#">Support numeriques</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li> -->
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          {% block connected%}
+
+          {%endblock%}
+           <span class="caret"></span></a>
+          
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Consulter</a></li>
+            <li><a href="#">Modifier</a></li>
+            <li class="divider"></li>
+            <li><a href="/pfe/controller/logout.php">Deconnexion</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+      <!-- Jumbotron -->
+      {%block jumbotron%}
+
+        <div class="jumbotron">
+      
+        <h1>
+          {%block titre%}
+
+      {%endblock%}
+        </h1>
+         {%block menuAccueil%}
+
+      {%endblock%}
+      </div>
+
+      {%endblock%}
+      
+
+      <!-- Example row of columns -->
+     
+      {%block main %}
+
+
+         <div class="row">
+          
+      </div>
+
+
+      {%endblock%}
+
+      <!-- Site footer -->
+      <div class="footer">
+        <p style="text-align:center;">&copy; Mamadou Alonso 2014</p>
+      </div>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

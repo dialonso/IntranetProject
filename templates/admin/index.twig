@@ -1,0 +1,15 @@
+{%extends "admin/layout.html.twig" %}
+
+{%block title%}
+	{{title}}
+{%endblock%}
+
+{%block titre%}
+{{titre}}
+
+ {%endblock%}
+
+ {% block connected%}
+ <img src="/pfe/sources/img/profil/{{user.compte.image}}" width="18">
+{{user.perso.prenom}} {{user.perso.nom}}
+          {%endblock%}
